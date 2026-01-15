@@ -45,7 +45,7 @@ create table gerenciar_assinaturas(
     id_assinatura serial primary key,
     nome_servico varchar(100) not null,
     valor_recorrente decimal(15,2) not null,
-    dia_vencimento date not null,
+    dia_vencimento  timestamp not null default current_timestamp,
     status_assinatura varchar(50) not null,
     origem_pagamento varchar(100) not null,
     fk_cartao int references cartao(id_cartao),
@@ -61,4 +61,11 @@ create table movimentacao_caixinha(
     fk_cliente int references clientes(id_cliente)
 )
 
+create table log_limite_cartao(
+    id_log serial primary key,
+    fk_cartao int references cartao(id_cartao),
+    limite_anterior decimal(15,2) not null,
+    novo_limite decimal(15,2) not null,
+    data_alteracao timestamp not null default current_timestamp 
+);
 
