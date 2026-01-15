@@ -5,4 +5,5 @@ select  nome from clientes c;
 select nome,numero_conta,saldo_disponivel from clientes c
 join contas on fk_cliente = id_cliente;
 
--- exibir os cart
+-- Exibir os cartões mostrando o limite total, o limite utilizado e o limite ainda disponível.
+select
