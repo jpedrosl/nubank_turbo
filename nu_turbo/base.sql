@@ -45,7 +45,7 @@ create table gerenciar_assinaturas(
     id_assinatura serial primary key,
     nome_servico varchar(100) not null,
     valor_recorrente decimal(15,2) not null,
-    dia_vencimento date not null,
+    dia_vencimento  timestamp not null default current_timestamp,
     status_assinatura varchar(50) not null,
     origem_pagamento varchar(100) not null,
     fk_cartao int references cartao(id_cartao),
