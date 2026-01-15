@@ -61,4 +61,11 @@ create table movimentacao_caixinha(
     fk_cliente int references clientes(id_cliente)
 )
 
+create table log_limite_cartao(
+    id_log serial primary key,
+    fk_cartao int references cartao(id_cartao),
+    limite_anterior decimal(15,2) not null,
+    novo_limite decimal(15,2) not null,
+    data_alteracao timestamp not null default current_timestamp 
+);
 
