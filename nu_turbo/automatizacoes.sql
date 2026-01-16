@@ -57,3 +57,34 @@ trg_padroniza_email
 before insert or update on clientes
 for each row
 execute function fn_tratar_email_cliente();
+
+
+
+--automaçao de pagamento de assinaturas
+create or replace function 
+fn_atualiza_saldo_conta()
+returns trigger as $$
+begin  --depositos somam ao saldo
+     if(new.tipo_operacao in ('pix recebido', 'deposito')) THEN
+        update contas
+        set saldo_disponivel = saldo_disponivel + new.valor
+        where id_conta = new.fk_conta;
+
+        --saques e pagamentos subtraem do saldo
+        ELSE
+        update contas
+        set saldo_disponivel = saldo_disponivel - new.valor
+        where id_conta = new.fk_conta;
+    end if;
+    return new;
+end;
+$$ language plpgsql;
+
+create trigger trg_atualiza_saldo_conta
+after insert on extrato
+for each row
+execute function fn_atualiza_saldo_conta();
+
+
+
+     
