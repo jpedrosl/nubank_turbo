@@ -91,7 +91,8 @@ values
 (12,'Viagem internacional',12000.00,40000.00,'Em andamento'),
 (13,'Pós-graduação',9000.00,30000.00,'Em andamento'),
 (14,'Casamento dos sonhos',30000.00,100000.00,'Em andamento'),
-(15,'Aposentadoria',80000.00,500000.00,'Iniciando');
+(15,'Aposentadoria',8000000.00,500000.00,'Iniciando');
+
 
 
 insert into caixinha_participantes(id_participante,fk_caixinha,fk_cliente)
