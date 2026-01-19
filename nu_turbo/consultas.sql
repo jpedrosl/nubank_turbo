@@ -73,3 +73,26 @@ where fk_cartao = 1;
 update cartao
 set limite_credito = 6000.00
 where id_cartao = 1;
+-----------------------------------------------------------
+     select ('clientes_id_cliente_seq',(select max(id_cliente) from clientes));
+=---------------------------------------------------------
+
+--trigger 3 teste
+insert into clientes (id_cliente, nome, email)
+values
+(100, 'usuario teste','USUARIOTESTE@GMAIL.COM.BR' );
+
+select nome, email from clientes
+where id_cliente = 100;
+
+--trigger 4 teste
+insert into extrato (id_extrato, tipo_operacao, valor, fk_conta)
+values
+(200, 'pix recebido', 1500.00, 1);
+
+select numero_conta, saldo_disponivel from contas
+where id_conta = 1;
+
+insert into extrato (id_extrato, tipo_operacao, valor, fk_conta)
+values
+(201, 'pagamento boleto', 200.00, 1);

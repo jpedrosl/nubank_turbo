@@ -88,5 +88,10 @@ for each row
 execute function fn_atualiza_saldo_conta();
 
 
+SELECT setval('contas_id_conta_seq', (SELECT MAX(id_conta) FROM contas));
+SELECT setval('cartao_id_cartao_seq', (SELECT MAX(id_cartao) FROM cartao));
+SELECT setval('extrato_id_extrato_seq', (SELECT MAX(id_extrato) FROM extrato));
+SELECT setval('caixinha_id_caixinha_seq', (SELECT MAX(id_caixinha) FROM caixinha));
+SELECT setval('movimentacao_caixinha_id_movimentacao_seq', (SELECT MAX(id_movimentacao) FROM movimentacao_caixinha));
 
      
