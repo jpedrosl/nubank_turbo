@@ -1,0 +1,41 @@
+cliente
+id_clientes :cria um identificador unico para cada cliente, o tipo serial faz com que o banco gere ids automaticamente 
+nome: armazena nome completo, not null impede que o campo fique vazio, varchar (100)garante que o dado aceite ate 100 caracteres de maneira variavel
+email: unique garante que nao existe dois clientes com o mesmo email no banco de dados
+---------------------------------------------------------------------------------------
+contas 
+id_contas: identificador serial unico da contas
+numero_conta: numero da conta nao pode se repetir
+saldo_disponivel: armazena o tipo decimal, aceitando ate 15 numeros para garantir precisao de ao menos duas casas decimais
+fk_cliente:chave estrangeira tipo inteiro devidp ao id tipo serial ligando a conta a um cliente especifico da tabela anterior
+
+cartao
+numero_final: armazena apenas os 4 ultimos digitos por segurança
+limite_credito: decimal se ate 15 caracteres que nao pode estar vazio
+limite_utiizado:decimal se ate 15 caracteres que nao pode estar vazio com valor padrao em 00
+fk_conta: liga um cartao a uma conta bancaria 
+
+ extrato
+ tipo_operacao: descreve o tipo de transiçao, not null nao deixa o campo vazio
+ data_operacao timestamp default current_timestamp registra o dia e hora exatas. o default current_timestamp
+ faz o banco preencher a data sozinho se voce nao enviar
+
+ caixinha
+ nome_objetivo: o nome que o usuario pode dar ao seu objetivo com ate 100 caracteres variaveis 
+ meta_valor : decimal para de ate 15 numeros que nao podem estar vazios com valor padrao em 00
+
+ caixinha_participantes
+ tabela de relacionamento (N:N), serve para permitir que varios clientes compartilhem a mesma caixinha 
+ armazenendo o id do cliente e o id da caxinha atravez de duas chaves estrangeiras(fk_caixinha, fk_cliente)
+
+gerenciar_assinaturas
+nome_servico: ate 100 caracteres variados 
+valor_recorrente: valor decimal de 15 numeros que nao podem estar vazios
+fk_caixinha e fk_cartao: chaves estrangeiras para rastrear de onde vira o pagamento 
+
+movimentacao_caixinha
+id_movimentacao: registro unico da caixinha do tipo serial
+
+log_limite_cartao 
+tabela de auditoria que serve exclusivamente para o trigger salvar o historico de alteracoes de limite,
+guardando o valor antes e depois da mudança.

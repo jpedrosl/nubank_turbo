@@ -1,0 +1,7 @@
+trigger 1 --saldo atualizada da caixinha apos movimentação
+funçao:
+ begin verigica a entrada de deposito
+if (new.tipo_movimento = 'deposito') THEN
+     o banco analisa o registro de entrada(new) se o tipo de movimentação for do tipo 'deposito' o codigo entra
+set saldo_caixinha = saldo_caixinha + new.valor 
+    funcao de soma que pega o valor atual (saldo_caixinha) e adc o valor da nova movimentacao(new.valor)
