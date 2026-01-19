@@ -98,3 +98,26 @@ join clientes on id_cliente = fk_cliente;
  select nome,nome_servico,valor_recorrente,dia_vencimento from gerenciar_assinaturas
  join clientes on id_cliente = id_assinatura;
 
+
+
+
+--------------------------------------------------------
+--trigger 1 teste
+
+insert into movimentacao_caixinha(tipo_movimento, valor, fk_caixinha, fk_cliente)
+values 
+('deposito', 500.00, 1, 1)
+
+
+
+select nome_objetivo, saldo_caixinha from caixinha
+where id_caixinha = 1;
+
+
+--trigger 2 teste
+select * from log_limite_cartao
+where fk_cartao = 1;
+
+update cartao
+set limite_credito = 6000.00
+where id_cartao = 1;

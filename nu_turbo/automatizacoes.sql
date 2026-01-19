@@ -28,9 +28,11 @@ execute function fn_atualiza_saldo_caixinha();
 create or replace function fn_log_limite_cartao()
 returns trigger as $$
 begin
+    -- Verificando se o limite mudou
     if (old.limite_credito <> new.limite_credito) THEN
     insert into log_limite_cartao (fk_cartao, limite_anterior, novo_limite)
     values (new.id_cartao, old.limite_credito, new.limite_credito);
+    
     end if;
     return new;
 end;
