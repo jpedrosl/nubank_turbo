@@ -1,0 +1,85 @@
+As consultas desse projeto referenciam com relatórios reais!
+
+1° Consulta: A primeira consulta traz o nome de todos os clientes cadastrados no banco
+
+2° Consulta: Essa consulta traz o  nome dos clientes, numero da conta e o saldo disponivel,
+esse join em contas da acesso a outra tabela, que traz a informaçâo do numero da conta e o saldo disponivel
+
+3° Consulta: Mostra o nome dos clientes, o limite total, o limite utilizado e o limite disponivel
+esse join na tabela cartao da acesso as informações do crédito utilizado, limite total e o limite disponivel 
+
+4° Consulta: Mostra o nome dos clientes e o saldo disponivel,
+o join na tabela contas traz a informaçâo do saldo disponivel,
+e clausura where é um filtro que para mostrar apenas os clientes com saldo maior que 5000
+
+5° Consulta: Mostra o nome dos clientes, o nome da operação que o clientre fez, o valor,
+o from traz todas as informações da tabela extrato
+e a data da operação, esse join clientes da acesso ao nome do cliente e o id dele,
+que faz junção com id da tabela extrato.
+
+6° Consulta: Mostra o nome do cliente, o nome da operação que o clientre fez, o valor,
+o from traz todas as informações da tabela extrato
+e a data da operação, esse join clientes da acesso ao nome do cliente e o id dele,
+que faz junção com id da tabela extrato e o where ele lista apenas o id do cliente 1.
+
+7° Consulta: Mostra o nome do objetivo da caixinha, saldo atual, meta e status da caixinha
+esse from taz todas as informações da tabela de caixinha.
+
+8° Consulta: Mostra o nome dos clientes, o saldo atual,meta e status da caixinha,
+o from taz a informações da tabela de caixinha e o join na tabela clientes
+faz uma junção do id do cliente com o id da caixinha, que da acesso as informações,
+da tabela clientes. 
+
+9° Consulta: Consulta: Mostra o nome dos clientes, o saldo atual e a meta,
+o from taz a informações da tabela de caixinha e o join na tabela clientes
+faz uma junção do id do cliente com o id da caixinha, que da acesso as informações,
+da tabela clientes. 
+
+10° Consulta: Traz a informaçâo do nome dos clientes, o valor total movimentado
+e tipo de movimentação, o from taz toda essa informaçâo da tabela movimentação caixinha,
+e esse join em clientes dá todas as informações dos clientes
+e faz a junção do id do cliente com a chave estrangeira na tabela movimentação caixinha,
+e esse groby by ele faz a agrupação pelo nome dos clientes, 
+para que não apareca informações repetitivas. 
+
+11° Consulta: Essa consulta mostra o nome do cliente, o valor  movimentado,
+e para que ele movimentou esse valor o from taz as informações da tabela movimentacao caixinha,
+e o join em clientes, da acesso ao nome dos clientes.
+
+12° Consulta: Aqui mostra o nome dos clientes e quais deles fizeram o pagamento
+com cartão de crédito, from em gerenciar assinaturas, traz a informaçâo da origem do pagamento,
+e o join em clientes da acesso ao nome dos clientes,
+o where serve para filtrar apenas pagamentos em crédito
+
+13° Consulta: Aqui mostra o nome dos clientes e quais deles fizeram o pagamento
+com débito, from em gerenciar assinaturas, traz a informaçâo da origem do pagamento,
+e o join em clientes da acesso ao nome dos clientes,
+o where serve para filtrar apenas pagamentos em Débito
+
+14° Consulta: Mostra o nome do clientem, o limite anterior que ele tinha, o seu novo limite,
+e a data que mudou, o from em log_limite_cartao traz toda essa informaçâo dos limites,
+o join em clientes para ter acesso aos nomes dos clientes.
+
+15° Consulta: Mostra os clientes com os maiores saldos do maior para o menor
+from em clientes, da acesso as informações da tabela clientes,
+e o join em contas faz a junção do id do cliente com id da conta,
+e o order by traz a ordem do maior para o menor.
+
+16° Consulta: Mostra os clientes que mais movimentaram dinheiro na caixinha do maior para o menor
+from em clientes, da acesso as informações da tabela clientes,
+e o join em caixinha faz a junção do id do cliente com id da caixinha,
+e o order by traz a ordem do maior para o menor.
+
+
+17° Consulta: mostra os Cartões com o uso acima dos 805 do limite,
+from em clientes traz o nome dos clientes e o join em cartão taz as informações da tabela 
+Cartões.
+
+18° Consulta: Lista todos os motivos, quanta trasacoes, tipo de movimentacao, e o valor total
+movimentado pelo motivo, o from em movimentacao caixinha taz as informações de lá,
+e o join em clientes com as informações de lá e faz a junção do id cliente com a chave estrangeira
+na tabela da movimentacao caixinha e o grup by faz a agrupação do nome e do tipo de movimento.
+
+=======================================================================================================
+
+1° view 
