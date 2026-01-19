@@ -1,134 +1,148 @@
-💳 Projeto Banco de Dados – Plataforma de Jogos Digitais
+💳 NU Turbo – Sistema de Banco Digital (SQL)
 
-Este repositório contém um projeto de banco de dados relacional desenvolvido em SQL, com o objetivo de modelar o funcionamento de uma plataforma de jogos digitais, inspirada em serviços como Steam, Epic Games e similares.
+Projeto de banco de dados relacional inspirado em funcionalidades de um banco digital, desenvolvido em SQL (PostgreSQL).
+O NU Turbo tem como objetivo simular operações comuns de um sistema bancário, aplicando boas práticas de modelagem de dados, consultas SQL, automatizações com triggers e functions e organização profissional de scripts.
 
-O projeto abrange desde o cadastro de usuários e jogos até funcionalidades como avaliações, comentários, amizades, biblioteca de jogos, conquistas e controle de preços.
-O foco principal está em modelagem de dados, normalização, relacionamentos entre entidades e consultas SQL, seguindo boas práticas de bancos de dados relacionais.
+Este projeto foi desenvolvido com foco educacional e de portfólio, sendo ideal para demonstrar conhecimentos em banco de dados em entrevistas técnicas e processos seletivos.
 
 📌 Funcionalidades do Projeto
 
-Cadastro de usuários com carteira virtual
+Cadastro de clientes
 
-Registro de jogos e desenvolvedoras
+Gerenciamento de contas bancárias
 
-Classificação de jogos por categorias (gêneros)
+Controle de cartões e limites
 
-Biblioteca de jogos por usuário
+Registro de movimentações financeiras
 
-Sistema de amizades entre usuários
+Histórico de alterações de limite de cartão
 
-Avaliações e comentários de jogos
+Automatizações com functions e triggers
 
-Controle de preços
+Consultas SQL para análise e relatórios
 
-Conquistas associadas aos jogos
-
-Consultas SQL para extração de informações relevantes
-
-🗂️ Estrutura do Banco de Dados
-
-O banco de dados é composto pelas seguintes entidades principais:
-
-Usuário – dados do jogador e saldo da carteira virtual
-
-Desenvolvedora – estúdios responsáveis pelo desenvolvimento dos jogos
-
-Jogo – informações gerais dos jogos disponíveis na plataforma
-
-Categoria – gêneros dos jogos
-
-Biblioteca – jogos adquiridos por cada usuário
-
-Preço – valores associados aos jogos
-
-Avaliação – notas atribuídas pelos usuários
-
-Comentários – feedback textual dos jogadores
-
-Conquistas – objetivos desbloqueáveis nos jogos
-
-Amizades – relacionamento social entre usuários
-
-Os relacionamentos foram definidos utilizando chaves primárias e estrangeiras, respeitando a integridade referencial e os princípios da normalização.
-
-📁 Organização dos Arquivos
-📦 projeto-banco-jogos
- ┣ 📜 base.sql           # Criação das tabelas e estrutura do banco
- ┣ 📜 insercoes.sql      # Inserção de dados de exemplo
- ┣ 📜 consultas.sql      # Consultas SQL para análise de dados
- ┣ 📜 automatizacoes.sql # Regras, gatilhos e automatizações (se aplicável)
- ┗ 📜 README.md          # Documentação do projeto
+🗂️ Estrutura do Projeto
+nu_turbo/
+│
+├── base.sql              # Criação das tabelas e relacionamentos
+├── insercoes.sql         # Inserção de dados de exemplo
+├── consultas.sql         # Consultas SQL para análise e relatórios
+├── automatizacoes.sql    # Triggers e functions (regras de negócio)
+├── index.sql             # Índices para otimização de desempenho
+└── README.md             # Documentação do projeto
 
 
-Cada arquivo possui uma responsabilidade específica, facilitando a leitura, manutenção e evolução do projeto.
+Cada arquivo possui uma responsabilidade específica, facilitando a manutenção, leitura e evolução do projeto.
 
-🛠️ Tecnologias Utilizadas
+🧱 Modelagem do Banco de Dados
 
-SQL (compatível com PostgreSQL e MySQL)
+O banco de dados foi modelado utilizando conceitos fundamentais de bancos relacionais, como:
 
-Modelagem de Banco de Dados Relacional
+Chaves primárias e estrangeiras
 
-Git & GitHub para versionamento e documentação
+Relacionamentos entre entidades
 
-▶️ Como Executar o Projeto
+Restrições de integridade
 
-Clone este repositório:
+Normalização dos dados
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
+Índices para melhoria de performance
+
+A estrutura foi pensada para evitar redundância, garantir consistência e simular regras reais de um sistema bancário.
+
+⚙️ Tecnologias Utilizadas
+
+PostgreSQL
+
+SQL / PLpgSQL
+
+Git & GitHub para versionamento e controle de código
+
+🚀 Como Executar o Projeto
+
+Crie o banco de dados:
+
+CREATE DATABASE nu_turbo;
 
 
-Abra o projeto em seu SGBD de preferência (PostgreSQL, MySQL, DBeaver, pgAdmin, entre outros).
+Conecte-se ao banco:
 
-Execute os arquivos SQL na seguinte ordem:
+psql -d nu_turbo
 
-base.sql
 
-insercoes.sql
+Execute os scripts na ordem correta:
 
-consultas.sql
+\i base.sql
+\i insercoes.sql
+\i automatizacoes.sql
+\i index.sql
 
-automatizacoes.sql (se aplicável)
 
-📊 Exemplos de Consultas
+Para testar consultas e relatórios:
 
-O arquivo consultas.sql contém exemplos de consultas como:
+\i consultas.sql
 
-Listar jogos por categoria
+🔁 Automatizações
 
-Exibir a biblioteca de jogos de um usuário
+O projeto utiliza functions e triggers para implementar regras de negócio diretamente no banco de dados, como:
 
-Calcular a média de avaliações de um jogo
+Atualização automática de limites
 
-Listar amigos de um usuário
+Registro de histórico de alterações
 
-Identificar os jogos mais bem avaliados
+Garantia de consistência dos dados
 
-Essas consultas simulam análises comuns em plataformas de jogos digitais.
+Centralização das regras no banco
 
-🎯 Objetivo Acadêmico
+Essas automatizações estão concentradas no arquivo automatizacoes.sql.
 
-Este projeto foi desenvolvido com fins educacionais, visando praticar:
+📊 Consultas SQL
 
-Criação de tabelas e relacionamentos
+O arquivo consultas.sql contém consultas para:
 
-Uso correto de chaves primárias e estrangeiras
+Listagem de clientes e contas
 
-Escrita e otimização de consultas SQL
+Análise de movimentações financeiras
 
-Organização de projetos de banco de dados
+Verificação de limites de cartão
 
-Documentação profissional no GitHub
+Relatórios básicos para apoio à decisão
 
-👤 Autores
+Essas consultas simulam cenários reais de análise em sistemas bancários.
+
+🎯 Objetivo do Projeto
+
+Este projeto foi desenvolvido com os seguintes objetivos:
+
+Aprimorar habilidades em SQL e PostgreSQL
+
+Praticar modelagem de dados
+
+Aplicar triggers e functions
+
+Simular regras reais de um banco digital
+
+Criar um projeto sólido para portfólio profissional
+
+📌 Próximas Melhorias (Roadmap)
+
+Criação de procedures para operações mais complexas
+
+Implementação de views para relatórios
+
+Controle de permissões por tipo de usuário
+
+Auditoria detalhada de operações
+
+Simulação de transferências e PIX
+
+👨‍💻 Autor
 
 Nicolas da Silva Floriano
-João Pedro Souza
-
-Estudantes de Banco de Dados / Desenvolvimento de Sistemas
+📍 Brasil
+🎓 Desenvolvedor em formação
+💼 Foco em Banco de Dados e Back-end
 
 📄 Licença
 
-Este projeto é de uso educacional.
-Sinta-se à vontade para estudar, modificar e adaptar o código para fins acadêmicos ou de aprendizado.
-
-⭐ Se este projeto te ajudou, considere deixar uma star no repositório!
+Projeto de uso educacional, livre para estudos, adaptações e aprimoramentos.
