@@ -141,6 +141,7 @@ values
 select numero_conta, saldo_disponivel from contas
 where id_conta = 1;
 
+--.
 insert into extrato (id_extrato, tipo_operacao, valor, fk_conta)
 values
-(201, 'pagamento boleto', 200.00, 1);
+(201, 'pagamento boleto', 200.00, 1); 
