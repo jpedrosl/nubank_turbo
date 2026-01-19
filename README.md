@@ -138,7 +138,7 @@ Simulação de transferências e PIX
 
 👨‍💻 Autor
 
-Nicolas da Silva Floriano
+Nicolas da Silva Floriano e João Pedro Souza
 📍 Brasil
 🎓 Desenvolvedor em formação
 💼 Foco em Banco de Dados e Back-end
