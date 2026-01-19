@@ -50,3 +50,26 @@ GROUP BY nome;
 select nome, valor,tipo_movimento from movimentacao_caixinha
 join clientes on id_cliente = fk_cliente
 
+
+
+
+--------------------------------------------------------
+--trigger 1 teste
+
+insert into movimentacao_caixinha(tipo_movimento, valor, fk_caixinha, fk_cliente)
+values 
+('deposito', 500.00, 1, 1)
+
+
+
+select nome_objetivo, saldo_caixinha from caixinha
+where id_caixinha = 1;
+
+
+--trigger 2 teste
+select * from log_limite_cartao
+where fk_cartao = 1;
+
+update cartao
+set limite_credito = 6000.00
+where id_cartao = 1;

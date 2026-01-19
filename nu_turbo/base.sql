@@ -53,7 +53,7 @@ create table gerenciar_assinaturas(
 )
 
 create table movimentacao_caixinha(
-    id_movimentaçao serial primary key,
+    id_movimentacao serial primary key,
     tipo_movimento varchar(50) not null,
     valor decimal(15,2) not null,
     data_movimento timestamp not null default current_timestamp,
