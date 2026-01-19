@@ -17,9 +17,9 @@ begin
 end;
 $$ language plpgsql;
 
-create trigger
+create or replace trigger
 trg_atualiza_saldo_caixinha
-after insert on movimentacao_caixinha
+after update on movimentacao_caixinha
 for each row
 execute function fn_atualiza_saldo_caixinha();
 
@@ -30,9 +30,9 @@ returns trigger as $$
 begin
     -- Verificando se o limite mudou
     if (old.limite_credito <> new.limite_credito) THEN
+    insert into log_limite_cartao (fk_cartao, limite_anterior, novo_limite)
+    values (new.id_cartao, old.limite_credito, new.limite_credito);
     
-        insert into log_limite_cartao (fk_cartao, limite_anterior, novo_limite)
-        values (old.id_cartao, old.limite_credito, new.limite_credito);
     end if;
     return new;
 end;

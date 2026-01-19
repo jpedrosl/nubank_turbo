@@ -1,3 +1,6 @@
+-- Busca pelo nome dos clientes
+create index nome_clientes
+on clientes(nome);
 -- indice para buscar de clientes por email
 create index idx_clientes_email on clientes(email);
 
